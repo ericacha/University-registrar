@@ -4,14 +4,15 @@
   {
 
       private $name;
+      private $date;
       private $id;
-     // private $date_enrollment;
 
 
-      function __construct($name,$id= null)
+      function __construct($name, $date, $id= null)
           {
 
             $this->name = $name;
+            $this->date = $date;
             $this->id = $id;
 
 
@@ -27,18 +28,14 @@
                $this->name = (string) $new_name;
            }
 
-
-
-           
-
-           function getDateEnrollment()
+           function getDate()
            {
-               return $this->date_enrollment;
+               return $this->date;
            }
 
-           function setDateEnrollment($new_date_enrollment)
+           function setDate($new_date)
            {
-               $this->date_enrollment = (int) $new_date_enrollment;
+               $this->date = (int) $new_date;
            }
 
            function getId()

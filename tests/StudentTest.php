@@ -17,8 +17,9 @@
         {
             //Arrange
             $name = "Tommy";
+            $date = 2000-03-23;
             $id = null;
-            $test_student = new Student($name, $id);
+            $test_student = new Student($name,$date, $id);
 
             //Act
             $result = $test_student->getName();
@@ -26,24 +27,31 @@
             //Assert
             $this->assertEquals($name,$result);
 
-        }
-        function testSetName()
-        {
-            //Arrange
-            $name = "Tommy";
-            $test_student = new Student($name);
+      //   }
+      //   function testSetName()
+      //   {
+      //       //Arrange
+      //       $name = "Tommy";
+      //       $test_student = new Student($name);
+      //
+      //       //Act
+      //       $test_student->setName("Cool.");
+      //       $result = $test_student->getName();
+      //
+      //       //Assert
+      //       $this->assertEquals("Cool.",$result);
+      //
+      //   }
+      //
+      //   function testGetId()
+      //
+      // {
+      //   //Arrange
+      //
+      // }
 
-            //Act
-            $test_student->setName("Cool.");
-            $result = $test_student->getName();
 
-            //Assert
-            $this->assertEquals("Cool.",$result);
-
-        }
-
-
-
+}
 
     }
 ?>
