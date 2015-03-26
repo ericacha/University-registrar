@@ -145,6 +145,31 @@
           $this->assertEquals([],$result);
         }
 
+        function test_findName()
+        {
+          //Arrange
+          $name ="Lola";
+          $date = '2004-02-23 12:00:00';
+          $id = 1;
+          $test_student = new Student($name, $date, $id);
+          $test_student->save();
+
+          $name2 = "Hal";
+          $id = 2;
+          $date2 = '2003-09-23 12:00:00';
+          $test_student2 = new Student($name2,$date2);
+          $test_student2->save();
+
+          $search_name = "Hal";
+
+
+          //Act
+          $result = Student::findName($search_name);
+
+          //Assert
+          $this->assertEquals($test_student2,$result);
+
+        }
 
 
     }

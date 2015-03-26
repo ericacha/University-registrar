@@ -80,6 +80,21 @@
              $GLOBALS['DB']->exec("DELETE FROM students *;");
            }
 
+           static function findName($search_name)
+           {
+             $search_nameDB = $GLOBALS['DB']->query("SELECT * FROM students WHERE name = '{$search_name}';");
+             $return_searchName = $search_nameDB->fetchAll(PDO::FETCH_ASSOC);
+             $return_student = null;
+
+             foreach ($return_searchName as $search)
+             {
+               $name = $search['name'];
+               $date = $search['date'];
+               $id = $search ['id'];
+               $return_student = new Student($name, $date, $id);
+             }
+             return $return_student;
+           }
 
 
 
